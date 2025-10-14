@@ -3,7 +3,6 @@
 
 <img align="right" alt="Coding" width="400" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif">
 
-- 🌱 I’m currently learning **Java Full Stack**
 - 💬 Ask me about **MERN stack, Java, and Web Development**
 - 📫 How to reach me **manojkatta1173@gmail.com**
 
