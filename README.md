@@ -1,34 +1,58 @@
-<h1 align="center">Hi 👋, I'm Manoj</h1>
+<h1 align="center">Hi, I'm Manoj</h1>
 <h3 align="center">
-Software Engineer @ BrowserStack | Percy Platform | Distributed Systems | Cloud Infrastructure
+Software Engineer @ BrowserStack · Percy Platform · Distributed Systems · Backend Engineering
 </h3>
 
-<img align="right" alt="Coding" width="400" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif">
+---
 
 ### About Me
-- Software Engineer at **BrowserStack** working on the **Percy Platform**
-- Building developer tooling, platform infrastructure, and scalable backend systems
-- Working primarily with **Ruby, JavaScript, and cloud infrastructure**
-- Interested in Distributed Systems, Platform Engineering, and Backend Systems
-- Previously built a custom **C2PA implementation** for image provenance verification with **95% verification accuracy**
 
-### Current Tech Stack
+Software Engineer on the **Percy Platform Team at BrowserStack**, building 
+scalable cross-browser visual testing infrastructure serving thousands of 
+projects globally.
 
-#### Backend / Platform
-Ruby • JavaScript • Node.js • REST APIs
+My work spans backend systems and platform infrastructure — from GCS storage 
+pipelines and Kubernetes automation to CI/CD tooling and browser rendering 
+infrastructure. Previously interned at **Paytm** (payouts backend, ₹130cr/day) 
+and did research on **C2PA/deepfake detection** at City, University of London.
 
-#### Cloud / Infrastructure
-GCP • Kubernetes • Docker • CI/CD
+---
 
-#### Databases
-MySQL • MongoDB • Redis
+### Things I've Shipped
 
-#### Frontend (secondary)
-React.js • 
+- **GCS deletion pipeline** with org-level GID prefixing — reduced storage 
+  from 188 TB → 23.5 TB (~87% reduction), saving ~$40–51K/year in GCP costs
+- **[@percy/cli v1.31.11](https://www.npmjs.com/package/@percy/cli)** — 
+  contributed to open-source npm package with 390K+ weekly downloads
+- **Build auto-finalization** for ~500 LinkedIn projects — replaced 8-hour 
+  fixed timeout with 2-hour automated limit, eliminating CI chain blockages
+- **Edge 142/143 latency fix** — reduced build latency from ~2s to <500ms 
+  through runtime analysis
+- **C2PA verification tool** — 95% accuracy on manifest verification 
+  (research @ City, University of London)
 
-### What I'm Currently Working On
-- Scaling platform workflows at BrowserStack
-- Improving release/developer tooling
-- Learning distributed systems design
-- Open source contributions
+---
 
+### Tech Stack
+
+**Backend / Platform:** Ruby · JavaScript · Node.js · REST APIs
+
+**Cloud / Infrastructure:** GCP · Kubernetes · Docker · CI/CD · Helm
+
+**Databases:** MySQL · MongoDB · Redis · Elasticsearch
+
+**Messaging:** Kafka · RabbitMQ
+
+**Frontend (secondary):** React.js
+
+---
+
+### Currently
+
+- Deepening distributed systems and backend engineering
+- Building a distributed rate limiter (token bucket + sliding window, Redis-backed)
+- Open to connecting with engineers working on hard infrastructure problems
+
+---
+
+📫 manojkatta1173@gmail.com · [LinkedIn](https://linkedin.com/in/manoj-katta-209a00228)
