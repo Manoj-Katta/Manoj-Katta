@@ -1,56 +1,74 @@
 <h1 align="center">Hi, I'm Manoj</h1>
 <h3 align="center">
-Software Engineer @ BrowserStack · Percy Platform · Distributed Systems · Backend Engineering
+Software Engineer @ BrowserStack · Percy · Backend & Platform Engineering
 </h3>
 
 ---
 
 ### About Me
 
-Software Engineer on the **Percy Platform Team at BrowserStack**, building 
-scalable cross-browser visual testing infrastructure serving thousands of 
-projects globally.
+Software Engineer on the **Percy team at BrowserStack**, working across backend
+features and the platform behind cross-browser visual testing: the system that
+captures customer DOM snapshots, renders them in real browsers, diffs them, and
+stores the results.
 
-My work spans backend systems and platform infrastructure — from GCS storage 
-pipelines and Kubernetes automation to CI/CD tooling and browser rendering 
-infrastructure. Previously interned at **Paytm** (payouts backend, ₹130cr/day) 
-and did research on **C2PA/deepfake detection** at City, University of London.
+I ship product features in the Rails API and the Node.js CLI and SDKs, and I work on
+the platform underneath them: storage and data lifecycle on GCS, the Sidekiq/Redis
+job pipeline, and browser rendering infrastructure. Previously interned at **Paytm**
+(payouts backend handling ₹130cr/day) and did research on **C2PA / deepfake detection** at
+City, University of London.
 
 ---
 
 ### Things I've Shipped
 
-- **GCS deletion pipeline** with org-level GID prefixing — reduced storage 
-  from 188 TB → 23.5 TB (~87% reduction), saving ~$40–51K/year in GCP costs
-- **[@percy/cli v1.31.11](https://www.npmjs.com/package/@percy/cli)** — 
-  contributed to open-source npm package with 390K+ weekly downloads
-- **Build auto-finalization** for ~500 LinkedIn projects — replaced 8-hour 
-  fixed timeout with 2-hour automated limit, eliminating CI chain blockages
-- **Edge 142/143 latency fix** — reduced build latency from ~2s to <500ms 
-  through runtime analysis
-- **C2PA verification tool** — 95% accuracy on manifest verification 
-  (research @ City, University of London)
+**BrowserStack — Percy**
+
+- **Popover and dialog capture in [@percy/cli](https://www.npmjs.com/package/@percy/cli)**
+  (500K+ weekly downloads) — [extended selective pseudo-class capture](https://github.com/percy/cli/pull/2141)
+  to popover and dialog elements and added SDK global config, unblocking an enterprise deal.
+- **Resource-retention deletion pipeline** — designed and built the pipeline that deletes
+  page-asset resources 3 months after last use, plus a backlog sweep on a shared worker
+  fleet across ~1B+ eligible resources, with a touch guard so assets a live build still
+  uses are never deleted. Targets ~$25–34K/yr in GCS savings.
+- **Browser upgrades across the rendering stack** — shipped Firefox 146, Edge 142/143
+  and Chrome 143 through base image, renderer, API, cache worker and CLI, with prod
+  build replays for the go/no-go; isolated an Edge 143 render-latency regression to
+  specific bundled browser features and disabled them.
+- **Browser force-upgrade admin API** — replaced a prod-console procedure with a
+  superuser API: dry-run preview, async runs, validation, rate limiting and
+  single-flight locking, so any engineer can run or revert an upgrade safely.
+- **Canary deploys for the job dispatcher** — threaded a canary flag from the API
+  through Redis Lua into a pool-aware scheduler, with an isolated canary worker pool
+  and a global kill switch. This closed the last uncovered component in the render
+  pipeline's canary coverage.
+
+**Paytm — Payouts backend (intern)**
+
+- **Merchant payouts** — worked on the backend behind ₹130+ crore in daily merchant
+  payouts: commission workflows, reporting modules for revenue reconciliation, and
+  hardened error handling in transaction flows.
+- **Report automation** — set up a RabbitMQ staging cluster to automate report
+  generation, removing manual steps; fixed an Elasticsearch fetch error that was
+  blocking report generation.
+- **Gold Coin launch** — built the payout-side changes for the Gold team's new
+  Gold Coin feature.
 
 ---
 
 ### Tech Stack
 
-**Backend / Platform:** Ruby · JavaScript · Node.js · REST APIs
+**Languages:** Ruby · JavaScript / Node.js · Java
 
-**Cloud / Infrastructure:** GCP · Kubernetes · Docker · CI/CD · Helm
+**Backend:** Rails · Sidekiq · Express · REST APIs
 
-**Databases:** MySQL · MongoDB · Redis · Elasticsearch
+**Cloud / Infra:** GCP (GCS, Cloud Monitoring) · Kubernetes · Docker · Helm · Terraform · CI/CD
+
+**Data:** MySQL · Redis · MongoDB · BigQuery · Elasticsearch
 
 **Messaging:** Kafka · RabbitMQ
 
-**Frontend:** React.js
-
----
-
-### Currently
-
-- Deepening distributed systems and backend engineering
-- Open to connecting with engineers working on hard infrastructure problems
+**Observability:** Honeycomb · Datadog · LaunchDarkly (feature flags)
 
 ---
 
