@@ -15,7 +15,7 @@ stores the results.
 I ship product features in the Rails API and the Node.js CLI and SDKs, and I work on
 the platform underneath them: storage and data lifecycle on GCS, the Sidekiq/Redis
 job pipeline, and browser rendering infrastructure. Previously interned at **Paytm**
-(payouts backend, ₹130cr/day) and did research on **C2PA / deepfake detection** at
+(payouts backend handling ₹130cr/day) and did research on **C2PA / deepfake detection** at
 City, University of London.
 
 ---
