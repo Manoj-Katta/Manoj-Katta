@@ -50,7 +50,6 @@ and did research on **C2PA/deepfake detection** at City, University of London.
 ### Currently
 
 - Deepening distributed systems and backend engineering
-- Building a distributed rate limiter (token bucket + sliding window, Redis-backed)
 - Open to connecting with engineers working on hard infrastructure problems
 
 ---
