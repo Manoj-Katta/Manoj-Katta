@@ -1,33 +1,36 @@
 <h1 align="center">Hi, I'm Manoj</h1>
 <h3 align="center">
-Software Engineer @ BrowserStack · Percy Platform · Backend & Platform Engineering
+Software Engineer @ BrowserStack · Percy · Backend & Platform Engineering
 </h3>
 
 ---
 
 ### About Me
 
-Software Engineer on the **Percy Platform team at BrowserStack**, working on the
-infrastructure behind cross-browser visual testing: the pipeline that renders
-customer DOM snapshots in real browsers, diffs them, and stores the results.
+Software Engineer on the **Percy team at BrowserStack**, working across backend
+features and the platform behind cross-browser visual testing: the system that
+captures customer DOM snapshots, renders them in real browsers, diffs them, and
+stores the results.
 
-My work spans storage and data lifecycle on GCS, the Sidekiq/Redis job pipeline,
-browser rendering infrastructure, and production debugging across a Rails API,
-a Go proxy and a Node.js CLI. Previously interned at **Paytm** (payouts backend,
-₹130cr/day) and did research on **C2PA / deepfake detection** at City, University of London.
+I ship product features in the Rails API and the Node.js CLI and SDKs, and I work on
+the platform underneath them: storage and data lifecycle on GCS, the Sidekiq/Redis
+job pipeline, and browser rendering infrastructure. Previously interned at **Paytm**
+(payouts backend, ₹130cr/day) and did research on **C2PA / deepfake detection** at
+City, University of London.
 
 ---
 
 ### Things I've Shipped
 
-**BrowserStack — Percy Platform**
+**BrowserStack — Percy**
 
-- **GCS storage cost reduction** — built Percy's 3-month resource-retention deletion
-  pipeline and a backlog sweep across ~1B+ eligible resources (120M+ deleted in
-  production so far, 0 incorrect deletions in audited samples); separately verified
-  no read path depends on orphaned object versions and rolled out a lifecycle rule
-  targeting ~220 TB of them (82 TB reclaimed in the first phase).
-  Projected savings: ~$25–34K/yr + ~$69K/yr.
+- **Popover and dialog capture in [@percy/cli](https://www.npmjs.com/package/@percy/cli)**
+  (500K+ weekly downloads) — [extended selective pseudo-class capture](https://github.com/percy/cli/pull/2141)
+  to popover and dialog elements and added SDK global config, unblocking an enterprise deal.
+- **Resource-retention deletion pipeline** — designed and built the pipeline that deletes
+  page-asset resources 3 months after last use, plus a backlog sweep on a shared worker
+  fleet across ~1B+ eligible resources, with a touch guard so assets a live build still
+  uses are never deleted. Targets ~$25–34K/yr in GCS savings.
 - **Browser upgrades across the rendering stack** — shipped Firefox 146, Edge 142/143
   and Chrome 143 through base image, renderer, API, cache worker and CLI, with prod
   build replays for the go/no-go; isolated an Edge 143 render-latency regression to
@@ -39,9 +42,6 @@ a Go proxy and a Node.js CLI. Previously interned at **Paytm** (payouts backend,
   through Redis Lua into a pool-aware scheduler, with an isolated canary worker pool
   and a global kill switch. This closed the last uncovered component in the render
   pipeline's canary coverage.
-- **[@percy/cli](https://www.npmjs.com/package/@percy/cli)** (500K+ weekly downloads) —
-  [added popover and dialog capture](https://github.com/percy/cli/pull/2141) via
-  `pseudoClassEnabledElements`, unblocking an enterprise deal.
 
 **Paytm — Payouts backend (intern)**
 
@@ -58,7 +58,7 @@ a Go proxy and a Node.js CLI. Previously interned at **Paytm** (payouts backend,
 
 ### Tech Stack
 
-**Languages:** Ruby · JavaScript / Node.js · Go · Java
+**Languages:** Ruby · JavaScript / Node.js · Java
 
 **Backend:** Rails · Sidekiq · Express · REST APIs
 
@@ -72,11 +72,4 @@ a Go proxy and a Node.js CLI. Previously interned at **Paytm** (payouts backend,
 
 ---
 
-### Currently
-
-- Draining a ~1B-resource deletion backlog on a shared worker fleet without starving the steady-state lane
-- Building a RAG application in public — [rag_application](https://github.com/Manoj-Katta/rag_application)
-
----
-
-📫 manojkatta1173@gmail.com · [LinkedIn](https://linkedin.com/in/manoj-katta-209a00228) · [Portfolio](https://manoj-katta-portfolio.netlify.app/)
+📫 manojkatta1173@gmail.com · [LinkedIn](https://linkedin.com/in/manoj-katta-209a00228)
