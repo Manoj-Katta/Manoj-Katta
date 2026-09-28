@@ -43,7 +43,7 @@ and did research on **C2PA/deepfake detection** at City, University of London.
 
 **Messaging:** Kafka · RabbitMQ
 
-**Frontend (secondary):** React.js
+**Frontend:** React.js
 
 ---
 
