@@ -33,8 +33,10 @@ City, University of London.
   uses are never deleted. Targets ~$25–34K/yr in GCS savings.
 - **Browser upgrades across the rendering stack** — shipped Firefox 146, Edge 142/143
   and Chrome 143 through base image, renderer, API, cache worker and CLI, with prod
-  build replays for the go/no-go; isolated an Edge 143 render-latency regression to
-  specific bundled browser features and disabled them.
+  build replays for the go/no-go. Traced an Edge render-latency regression to its
+  bundled AI features (Copilot, on-device Phi-4-mini, Web AI APIs) and disabled them in
+  Edge 142 and 143, cutting the added per-snapshot latency from ~2s to under 500ms;
+  benchmarked both and shipped Edge 142 as the faster build.
 - **Browser force-upgrade admin API** — replaced a prod-console procedure with a
   superuser API: dry-run preview, async runs, validation, rate limiting and
   single-flight locking, so any engineer can run or revert an upgrade safely.
