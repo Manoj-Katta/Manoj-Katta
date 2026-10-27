@@ -24,24 +24,25 @@ City, University of London.
 
 **BrowserStack — Percy**
 
-- **Popover and dialog capture in [@percy/cli](https://www.npmjs.com/package/@percy/cli)**
-  (500K+ weekly downloads) — [extended selective pseudo-class capture](https://github.com/percy/cli/pull/2141)
-  to popover and dialog elements and added SDK global config, unblocking an enterprise deal.
-- **Resource-retention deletion pipeline** — designed and built the pipeline that deletes
-  page-asset resources 3 months after last use, plus a backlog sweep on a shared worker
-  fleet across ~1B+ eligible resources, with a touch guard so assets a live build still
-  uses are never deleted. Targets ~$25–34K/yr in GCS savings.
-- **Browser upgrades across the rendering stack** — shipped Firefox 146, Edge 142/143
-  and Chrome 143 through base image, renderer, API, cache worker and CLI, with prod
-  build replays for the go/no-go; isolated an Edge 143 render-latency regression to
-  specific bundled browser features and disabled them.
-- **Browser force-upgrade admin API** — replaced a prod-console procedure with a
-  superuser API: dry-run preview, async runs, validation, rate limiting and
-  single-flight locking, so any engineer can run or revert an upgrade safely.
+- **Popover capture in [@percy/cli](https://www.npmjs.com/package/@percy/cli)**
+  (500K+ weekly downloads) — [built popover capture](https://github.com/percy/cli/pull/2141)
+  across the CLI (v1.31.11), the render cache worker and the Ember SDK (v5.0.1),
+  unblocking an enterprise deal.
+- **Resource-retention deletion pipeline** — designed the pipeline over ~1B+ eligible
+  page assets, on its own worker pods and queues, with a guard so assets a live build
+  still uses are never deleted. It has removed ~45 TB from the resources bucket so far,
+  cutting ~$14K a year in ongoing storage cost, and keeps deleting as assets age out.
+- **Browser upgrades, end to end** — own Percy's desktop browser upgrades across base
+  image, renderer, API, cache worker and CLI. Traced an Edge render-latency regression
+  to bundled AI features and cut the added per-snapshot latency from ~2s to under
+  500ms; built an admin API with dry-run preview that replaced a production-console
+  upgrade procedure.
 - **Canary deploys for the job dispatcher** — threaded a canary flag from the API
   through Redis Lua into a pool-aware scheduler, with an isolated canary worker pool
-  and a global kill switch. This closed the last uncovered component in the render
-  pipeline's canary coverage.
+  and a global kill switch.
+- **On-call noise** — reworked the Sidekiq, compare-job and rendering-proxy alerts
+  (about 95% less page noise on the proxy alert), and replaced ~6.2M per-terminal
+  health-check pager events a week with one summary per pool.
 
 **Paytm — Payouts backend (intern)**
 
